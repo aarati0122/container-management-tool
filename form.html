@@ -1,0 +1,78 @@
+ <body  bgcolor="grey">
+<style>
+        #d1 {
+		 background-color: antiquewhite;
+            background: antiquewhite;
+            width: 100%;
+            height: 30%;
+            color: rgb(10, 3, 17);
+            background-color: blueviolet;
+            border-radius: 10px;
+        } 
+	#d2 {
+		 background-color: antiquewhite;
+            background: antiquewhite;
+            width: 100%;
+            height: 30%;
+            color: rgb(10, 3, 17);
+            background-color: blueviolet;
+            border-radius: 10px;
+        }
+
+    </style>
+<script>
+
+        function kd() {
+	    let cname = document.getElementById("in1").value;
+	    let cimg = document.getElementById("s1").value;
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                document.getElementById("d1").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "http://65.2.137.189:3000/output?cname="+ cname +"&img=" + cimg);
+            xhttp.send();
+        }
+        function ps() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                document.getElementById("d2").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "http://65.2.137.189:3000/info");
+            xhttp.send();
+        }
+        function inspect() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                document.getElementById("d3").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "http://65.2.137.189:3000/inspect" );
+            xhttp.send();
+        }
+    </script>
+
+
+
+    <marquee id="m1" behavior="" direction="">
+        <h1>Welcome to my container Service <br></h1>
+    </marquee>
+    <h1>Please Select The Choice</h1>
+    Enter Your Container Name : <input type="text" name="cname" id="in1">
+    Enter Your Image Name :
+    <select  id="s1" name="img">
+        <option value="centos">centos</option>
+        <option value="ubuntu">ubuntu</option>
+        <option value="httpd">httpd</option>
+    </select>
+    <button onclick="kd()">Click Me</button>
+    <div id="d1" >Container Id Will Show Here</div>
+    <b> See All Cntainer Here : </b>
+    <button onclick="ps()">Click Me</button>
+    <div id="d2" >Container List</div>
+    <br/>
+    <b>Inspect Here</b>
+    <button onclick="inspect()">Click Me</button>
+    <div id="d3" ></div>
+
+
+    <body/>
+
