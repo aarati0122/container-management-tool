@@ -1,0 +1,247 @@
+ <html>
+ <body>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+input[type=text] {
+  width: 200px;
+  padding: 10px 10px;
+  margin: 1px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 35px;
+}
+
+body { height: 100%; padding: 0; margin: 0; }
+div { width: 50%; height: 50%; float: left; }
+#tl{ background: #AAA; }
+#tr{ background: #BBB; }
+#bl{ background: #CCC; }
+#br{ background: #DDD; }
+.option{
+  width: 240px;
+  height: 30px;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+.w3-btn {width:150px;}
+ html,body 
+ {
+    padding:0;
+    margin:0;
+    height:100%;
+    min-height:100%;
+  }
+/*body {
+  font-family: Arial, Helvetica, sans-serif;
+}*/
+ .topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+ .logo-image{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px;
+}
+     #d1 {
+     background-color: antiquewhite;
+            background: antiquewhite;
+            width: 100%;
+            height: 30%;
+            color: rgb(10, 3, 17);
+            background-color: #AAA;
+            /*border-radius: 20px;*/
+        } 
+  #d2 {
+     background-color: antiquewhite;
+            background: antiquewhite;
+            width: 100%;
+            height: 30%;
+            color: rgb(10, 3, 17);
+            background-color: #BBB;
+            /*border-radius: 20px;*/
+}
+input[type=text] {
+  width: 240px;
+  height: 30px;
+  padding: 10px 10px;
+  margin: 1px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+h3 {
+background-color: black;
+margin-top: -6px;
+margin-bottom: 0px;
+}
+</style>
+</head>
+<script>
+
+        function kd() {
+	    let cname = document.getElementById("in1").value;
+	    let cimg = document.getElementById("s1").value;
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                document.getElementById("d1").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "http://65.2.137.189:3000/output?cname="+ cname +"&img=" + cimg);
+            xhttp.send();
+        }
+        function ps() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                document.getElementById("d2").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "http://65.2.137.189:3000/info");
+            xhttp.send();
+        }
+        function inspect() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                document.getElementById("d3").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "http://65.2.137.189:3000/inspect" );
+            xhttp.send();
+        }
+    </script>
+
+    <!-- <marquee id="m1" behavior="" direction="">
+        <h3>Welcome to my container Service</h3>
+    </marquee> -->
+<!-- <table style="width:100%">
+    <td>
+    Enter Your Container Name :
+    <input type="text" placeholder="Enter Username" name="cname" id="in1">
+    <br>
+    <br>
+    Enter Your Image Name :
+    <select  id="s1" name="img">
+        <option value="centos">centos</option>
+        <option value="ubuntu">ubuntu</option>
+        <option value="httpd">httpd</option>
+    </select>
+    <br>
+    <br>
+    <button onclick="kd()">Click Me</button>
+    <br>
+    <div id="d1" >Container Id Will Show Here</div>
+    </td>
+    <td>
+        <b> See All Cntainer Here : </b>
+        <br>
+        <br>
+    <button onclick="ps()">Click Me</button>
+    <br>
+    <br>
+    <div id="d2" >Container List</div>
+    <br/>
+    <br>
+    <b>Inspect Here</b>
+
+    <button onclick="inspect()">Click Me</button>
+    <div id="d3" ></div>
+    </td>
+</table> -->
+
+    <!-- Enter Your Container Name : <input type="text" name="cname" id="in1">
+    Enter Your Image Name :
+    <select  id="s1" name="img">
+        <option value="centos">centos</option>
+        <option value="ubuntu">ubuntu</option>
+        <option value="httpd">httpd</option>
+    </select>
+    <button onclick="kd()">Click Me</button>
+    <br><br>
+    <div id="d1" >Container Id Will Show Here</div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> See All Cntainer Here : </b>
+    <button onclick="ps()">Click Me</button>
+    <br><br>
+    <div id="d2" >Container List</div>
+    <br/>
+    <b>Inspect Here</b>
+    <button onclick="inspect()">Click Me</button>
+    <div id="d3" ></div> -->
+        <h3><a href="mern/index.html" id="home" class="w3-button w3-black">Home</a></h3>
+
+<div id="tl">
+  <!-- <div class="centered"> -->
+   <!--  <center><h4>Please Select The Choice</h4></center> -->
+   <div class="container" align="center">
+    <br>
+    <b>Enter Your Container Name :</b>
+  
+    <input type="text" placeholder="" name="cname" id="in1">
+    <br>
+   <b> Enter Your Image Name :</b>
+      <select type="text" id="s1" name="img" class="option">
+        <option>Select the OS </option>
+        <option value="centos">centos</option>
+        <option value="ubuntu">ubuntu</option>
+        <option value="httpd">httpd</option>
+    </select>
+    <br><br>
+    <button onclick="kd()">Click Me</button>
+    <br>
+    <div id="d1" >Container Id Will Show Here</div>
+  </div>
+</div>
+<div id="tr">
+  <div class="container" align="center">
+    <br>
+    <b> See All Cntainer Here : </b>
+    <button onclick="ps()">Click Me</button>
+    
+    <div id="d2" >Container List</div>
+    <br/>
+    </div>
+</div>
+<div id="bl">
+  <br>
+  <div class="container" align="center">
+  <b>Inspect Here</b>
+    <button onclick="inspect()">Click Me</button>
+    <div id="d3" ></div>
+</div>
+</div>
+<div id="br">
+  <br>
+  <div class="container" align="center">
+  <b>Manage given conatainer</b>
+    <br>
+    <b>Container Name:</b><input type="text" placeholder="container Id" name="cname" id="">
+    <br><br>
+      <button class="w3-button w3-black w3-round-xlarge w3-hover-green">Start</button>
+      <button class="w3-button w3-black w3-round-xlarge w3-hover-indigo">Stop</button>  
+      <button class="w3-button w3-black w3-round-xlarge w3-hover-red">Remove </button>
+</div>
+
+</div>
+</body>
+</html>
+
